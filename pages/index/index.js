@@ -15,6 +15,10 @@ Page({
                 let feeds = res.data.data
                 this.setData({ feeds })
                 wx.hideLoading()
+            },
+            fail: (res) => {
+                let title = JSON.stringify(res)
+                wx.showToast({ title })
             }
         })
     },
@@ -22,7 +26,7 @@ Page({
     handleGoDetail(event) {
         let id = event.currentTarget.dataset.id
         let params = {
-            url: '../detail/index?id=' + id
+            url: `../detail/index?id=${id}`
         }
         wx.navigateTo(params)
     }

@@ -44,5 +44,11 @@
 	margin: 8px 0;
 }
 
-.share {
+.button_container {
+	display: flex;
+	flex-direction: row;
+}
+
+.button_container button {
+	width: 40%;
 }
