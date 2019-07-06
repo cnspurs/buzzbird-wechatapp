@@ -1,0 +1,7 @@
+var formatTime = function(time) {
+    return time.slice(0, 10)
+}
+
+module.exports = {
+    formatTime: formatTime
+}

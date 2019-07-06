@@ -1,3 +1,5 @@
+<wxs src="../util.wxs" module="util" />
+
 <view class="list" wx:for="{{feeds}}" wx:for-item="item" wx:key="index">
 	<view class="card" data-id="{{item.id}}" bindtap="handleGoDetail">
         <view class="profile">
@@ -6,7 +8,7 @@
 			</view>
 			<view class="info">
 				<view class="name">{{item.user.chinese_name}} {{item.type}}</view>
-				<view class="time">{{item.created_at.slice(0, 10)}}</view>
+				<view class="time">{{util.formatTime(item.created_at)}}</view>
 			</view>
 		</view>
 		<view class="content">{{item.title}}</view>
@@ -15,3 +17,4 @@
 		</view>
     </view>
 </view>
+

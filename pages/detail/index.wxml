@@ -1,3 +1,5 @@
+<wxs src="../util.wxs" module="util" />
+
 <view class="card" wx:if="{{id}}">
 	<view class="profile">
 		<view class="avatar">
@@ -5,7 +7,7 @@
 		</view>
 		<view class="info">
 			<view class="name">{{user.chinese_name}} {{type}}</view>
-			<view class="time">{{created_at.slice(0, 10)}}</view>
+			<view class="time">{{util.formatTime(created_at)}}</view>
 		</view>
 	</view>
 	<view class="content">{{title}}</view>
