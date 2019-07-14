@@ -3,10 +3,19 @@ Page({
 
     onLoad(option) {
         this.id = option.id
-        this.fetchDetail()
+        if (option.data) {
+            let data = JSON.parse(option.data)
+            this.setData(data)
+        } else {
+            this.fetchDetail()
+        }
     },
 
-    onShareAppMessage() {},
+    onShareAppMessage() {
+        return {
+            path: `/pages/detail/index?id=${this.id}`
+        }
+    },
 
     fetchDetail() {
         wx.showLoading()

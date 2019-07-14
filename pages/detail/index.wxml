@@ -11,11 +11,11 @@
 		</view>
 	</view>
 	<view class="content">{{title}}</view>
-	<view class="image" wx:if="{{media_url}}">
-		<image mode="widthFix" src="{{media_url}}" />
+	<view class="image" wx:if="{{media.length}}" wx:for="{{media}}" wx:for-item="item" wx:key="index">
+		<image mode="widthFix" src="{{item.url}}" />
 	</view>
 	<view class="button_container">
-		<button class="home" bindtap="handleGoHome">首页</button>
-		<button open-type="share" class="share">分享</button>
+		<button class="home" plain="true "bindtap="handleGoHome"><image class="icon" mode="widthFix" src="../icon/home.png" />首页</button>
+		<button open-type="share" class="share" plain="true"><image class="icon" mode="widthFix" src="../icon/wechat.png" />分享</button>
 	</view>
 </view>

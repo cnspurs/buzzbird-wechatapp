@@ -43,9 +43,10 @@
 			"current": 0,
 			"list": [
 				{
-					"id": -1,
+					"id": 0,
 					"name": "详情",
 					"pathName": "pages/detail/index",
+					"query": "id=482",
 					"scene": null
 				}
 			]

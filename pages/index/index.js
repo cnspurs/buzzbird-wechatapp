@@ -24,9 +24,11 @@ Page({
     },
 
     handleGoDetail(event) {
-        let id = event.currentTarget.dataset.id
+        let detail = event.currentTarget.dataset.detail
+        let { id } = detail
+        let data = JSON.stringify(detail)
         let params = {
-            url: `../detail/index?id=${id}`
+            url: `../detail/index?id=${id}&data=${data}`
         }
         wx.navigateTo(params)
     }
