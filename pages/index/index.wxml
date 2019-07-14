@@ -13,7 +13,7 @@
 		</view>
 		<view class="content">{{item.title}}</view>
 		<view class="image" wx:if="{{item.media.length}}">
-			<image mode="widthFix" src="{{item.media[0].url}}" />
+			<image wx:for="{{item.media}}" wx:for-item="img" wx:key="index" class="{{item.media.length === 1 ? 'single' : 'multiple'}}" mode="{{item.media.length === 1 ? 'widthFix' : 'aspectFill'}}" src="{{img.url}}" />
 		</view>
     </view>
 </view>

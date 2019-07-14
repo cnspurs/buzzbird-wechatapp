@@ -43,7 +43,20 @@
 	
 }
 
-.image image{
+.image {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.image .single{
 	width: 100%;
 	margin: 8px 0;
+}
+
+.image .multiple{
+	justify-content: space-between;
+	width: 49%;
+	height: 160px;
+	margin: 1px
 }
