@@ -4,7 +4,7 @@ Page({
     onLoad(option) {
         this.id = option.id
         if (option.data) {
-            let data = JSON.parse(option.data)
+            let data = JSON.parse(decodeURIComponent(option.data))
             this.setData(data)
         } else {
             this.fetchDetail()

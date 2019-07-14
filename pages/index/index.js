@@ -26,7 +26,7 @@ Page({
     handleGoDetail(event) {
         let detail = event.currentTarget.dataset.detail
         let { id } = detail
-        let data = JSON.stringify(detail)
+        let data = encodeURIComponent(JSON.stringify(detail))
         let params = {
             url: `../detail/index?id=${id}&data=${data}`
         }
