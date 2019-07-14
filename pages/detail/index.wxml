@@ -12,7 +12,7 @@
 	</view>
 	<view class="content">{{title}}</view>
 	<view class="image" wx:if="{{media.length}}" wx:for="{{media}}" wx:for-item="item" wx:key="index">
-		<image mode="widthFix" src="{{item.url}}" />
+		<image mode="widthFix" src="{{item.url}}" data-current="{{item.url}}" bindtap="handlePreviewImage"/>
 	</view>
 	<view class="button_container">
 		<button wx:if="{{isShare}}" class="home" plain="true "bindtap="handleGoHome"><image class="icon" mode="widthFix" src="../icon/home.png" />首页</button>

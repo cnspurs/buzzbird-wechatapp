@@ -24,12 +24,21 @@ Page({
     },
 
     handleGoDetail(event) {
-        let detail = event.currentTarget.dataset.detail
+        let { detail } = event.currentTarget.dataset
         let { id } = detail
         let data = encodeURIComponent(JSON.stringify(detail))
         let params = {
             url: `../detail/index?id=${id}&data=${data}`
         }
         wx.navigateTo(params)
+    },
+
+    handlePreviewImage(event) {
+        let { media, current } = event.currentTarget.dataset
+        let urls = media.map(item => item.url)
+        wx.previewImage({
+            current,
+            urls
+        })
     }
 })

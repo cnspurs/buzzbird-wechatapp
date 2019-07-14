@@ -35,5 +35,14 @@ Page({
             url: '../index/index'
         }
         wx.redirectTo(params)
+    },
+
+    handlePreviewImage(event) {
+        let { current } = event.currentTarget.dataset
+        let urls = this.data.media.map((item) => item.url)
+        wx.previewImage({
+            current,
+            urls
+        })
     }
 })
