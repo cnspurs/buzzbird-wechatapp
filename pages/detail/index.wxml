@@ -15,7 +15,7 @@
 		<image mode="widthFix" src="{{item.url}}" />
 	</view>
 	<view class="button_container">
-		<button class="home" plain="true "bindtap="handleGoHome"><image class="icon" mode="widthFix" src="../icon/home.png" />首页</button>
+		<button wx:if="{{isShare}}" class="home" plain="true "bindtap="handleGoHome"><image class="icon" mode="widthFix" src="../icon/home.png" />首页</button>
 		<button open-type="share" class="share" plain="true"><image class="icon" mode="widthFix" src="../icon/wechat.png" />分享</button>
 	</view>
 </view>

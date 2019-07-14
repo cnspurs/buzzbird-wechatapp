@@ -7,6 +7,7 @@ Page({
             let data = JSON.parse(decodeURIComponent(option.data))
             this.setData(data)
         } else {
+            this.setData({ isShare: true })
             this.fetchDetail()
         }
     },
