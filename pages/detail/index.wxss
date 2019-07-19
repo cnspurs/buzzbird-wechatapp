@@ -25,10 +25,21 @@
 
 .name{
 	font-size: 16px;
+	line-height: 20px;
+}
+
+.postInfo{
+	display: flex;
+	font-size: 14px;
+	line-height: 20px;
 }
 
 .time{
-	font-size: 14px;
+	color: #939393;
+	margin-right: 10px;
+}
+
+.from{
 	color: #939393;
 }
 
@@ -47,7 +58,7 @@
 .button_container {
 	display: flex;
 	flex-direction: row;
-	margin-top: 14px;
+	margin: 14px 0;
 }
 
 .button_container button {

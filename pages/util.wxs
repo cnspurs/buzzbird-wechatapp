@@ -1,5 +1,67 @@
 var formatTime = function(time) {
-    return time.slice(0, 10)
+    return format(getDate(transformTimeStampISO8601(time)), 'MM-DD HH:mm')
+}
+
+// 转换Java服务输出的日期格式（ISO 8601）为时间戳
+// 2019-03-06T13:30:00.000+08:00 => 1551850200000
+var transformTimeStampISO8601 = function(dateStr) {
+    var reg = getRegExp("^(-?(?:[1-9][0-9]*)?[0-9]{4})-(1[0-2]|0[1-9])-(3[01]|0[1-9]|[12][0-9])T(2[0-3]|[01][0-9]):([0-5][0-9]):([0-5][0-9])(\.[0-9]+)?(Z)?((\+|-)?\d{1,2}:00)?$")
+
+    var matches = dateStr.match(reg)
+    if (matches && matches.length) {
+        var year = matches[1]
+        var month = matches[2] == undefined ? 0 : matches[2] - 1
+        var day = matches[3]
+        var hour = matches[4]
+        var minute = matches[5]
+        var second = matches[6]
+        var date = getDate(year, month, day, hour, minute, second)
+        return date.getTime() - getDate().getTimezoneOffset() * 60000
+    }
+    return null
+}
+
+// 格式化日期
+var format = function(date, format) {
+    format = format || 'YYYY-MM-DD'
+    var reg = getRegExp("Y+|M+|D+|H+|m+|s+|w+", "g")
+    return format.replace(reg, function(match) {
+        var firstChar = match.substring(0, 1),
+            len = match.length
+        switch (firstChar) {
+            case 'Y':
+                return date
+                    .getFullYear()
+                    .toString()
+                    .substring(4 - len)
+            case 'M':
+                return pad(date.getMonth() + 1, len, '0', true)
+            case 'D':
+                return pad(date.getDate(), len, '0', true)
+            case 'H':
+                return pad(date.getHours(), len, '0', true)
+            case 'm':
+                return pad(date.getMinutes(), len, '0', true)
+            case 's':
+                return pad(date.getSeconds(), len, '0', true)
+        }
+    })
+}
+
+// 补 0
+var pad = function(str, len, fill, pre) {
+    str = str.toString()
+    if (str.length < len) {
+        var arr = []
+        arr.length = len
+        fill = arr.join(fill || ' ')
+        if (pre) {
+            str = (fill + str).substring(-len)
+        } else {
+            str = (str + fill).substringing(0, len)
+        }
+    }
+    return str
 }
 
 module.exports = {

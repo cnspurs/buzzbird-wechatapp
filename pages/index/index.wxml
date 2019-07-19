@@ -1,20 +1,39 @@
 <wxs src="../util.wxs" module="util" />
 
-<view class="list" wx:for="{{feeds}}" wx:for-item="item" wx:key="index">
+<view
+ class="list"
+ wx:for="{{feeds}}"
+ wx:for-item="item"
+ wx:key="index"
+>
 	<view class="card" data-detail="{{item}}" bindtap="handleGoDetail">
-        <view class="profile">
+		<view class="profile">
 			<view class="avatar">
 				<image src="https://tva4.sinaimg.cn/crop.0.0.640.640.180/006mMONSjw8f07e97juukj30hs0hsgls.jpg" />
 			</view>
 			<view class="info">
-				<view class="name">{{item.user.chinese_name}} {{item.type}}</view>
-				<view class="time">{{util.formatTime(item.created_at)}}</view>
+				<view class="name">{{item.user.chinese_name || item.user.english_name}}</view>
+				<view class="postInfo">
+					<view class="time">{{util.formatTime(item.created_at)}}</view>
+					<view class="from">来自 {{item.type}}</view>
+				</view>
 			</view>
 		</view>
 		<view class="content">{{item.title}}</view>
 		<view class="image" wx:if="{{item.media.length}}">
-			<image wx:for="{{item.media}}" wx:for-item="img" wx:key="index" class="{{item.media.length === 1 ? 'single' : 'multiple'}}" mode="{{item.media.length === 1 ? 'widthFix' : 'aspectFill'}}" src="{{img.url}}" data-media="{{item.media}}" data-current="{{img.url}}" catchtap="handlePreviewImage"/>
+			<image
+			 lazy-load="true"
+			 wx:for="{{item.media}}"
+			 wx:for-item="img"
+			 wx:key="index"
+			 class="{{item.media.length === 1 ? 'single' : 'multiple'}}"
+			 mode="{{item.media.length === 1 ? 'widthFix' : 'aspectFill'}}"
+			 src="{{img.url}}"
+			 data-media="{{item.media}}"
+			 data-current="{{img.url}}"
+			 catchtap="handlePreviewImage"
+			/>
 		</view>
-    </view>
+	</view>
 </view>
 

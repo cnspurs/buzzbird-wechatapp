@@ -6,16 +6,42 @@
 			<image src="https://tva4.sinaimg.cn/crop.0.0.640.640.180/006mMONSjw8f07e97juukj30hs0hsgls.jpg" />
 		</view>
 		<view class="info">
-			<view class="name">{{user.chinese_name}} {{type}}</view>
-			<view class="time">{{util.formatTime(created_at)}}</view>
+			<view class="name">{{user.chinese_name || user.english_name}}</view>
+			<view class="postInfo">
+				<view class="time">{{util.formatTime(created_at)}}</view>
+				<view class="from">来自 {{type}}</view>
+			</view>
 		</view>
 	</view>
 	<view class="content">{{title}}</view>
-	<view class="image" wx:if="{{media.length}}" wx:for="{{media}}" wx:for-item="item" wx:key="index">
-		<image mode="widthFix" src="{{item.url}}" data-current="{{item.url}}" bindtap="handlePreviewImage"/>
+	<view
+	 class="image"
+	 wx:if="{{media.length}}"
+	 wx:for="{{media}}"
+	 wx:for-item="item"
+	 wx:key="index"
+	>
+		<image
+		 mode="widthFix"
+		 src="{{item.url}}"
+		 data-current="{{item.url}}"
+		 bindtap="handlePreviewImage"
+		/>
 	</view>
 	<view class="button_container">
-		<button wx:if="{{isShare}}" class="home" plain="true "bindtap="handleGoHome"><image class="icon" mode="widthFix" src="../icon/home.png" />首页</button>
-		<button open-type="share" class="share" plain="true"><image class="icon" mode="widthFix" src="../icon/wechat.png" />分享</button>
+		<button
+		 wx:if="{{isShare}}"
+		 class="home"
+		 plain="true "
+		 bindtap="handleGoHome"
+		>
+			<image class="icon" mode="widthFix" src="../icon/home.png" />
+			首页
+		</button>
+		<button open-type="share" class="share" plain="true">
+			<image class="icon" mode="widthFix" src="../icon/wechat.png" />
+			分享
+		</button>
 	</view>
 </view>
+
