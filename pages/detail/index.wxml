@@ -14,14 +14,12 @@
 		</view>
 	</view>
 	<view class="content">{{title}}</view>
-	<view
-	 class="image"
-	 wx:if="{{media.length}}"
-	 wx:for="{{media}}"
-	 wx:for-item="item"
-	 wx:key="index"
-	>
+	<view class="image">
 		<image
+		 wx:if="{{media.length}}"
+		 wx:for="{{media}}"
+		 wx:for-item="item"
+		 wx:key="index"
 		 mode="widthFix"
 		 src="{{item.url}}"
 		 data-current="{{item.url}}"
