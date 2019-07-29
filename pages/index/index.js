@@ -1,5 +1,7 @@
 Page({
-    data: {},
+    data: {
+        defaultAvatar: "https://tva4.sinaimg.cn/crop.0.0.640.640.180/006mMONSjw8f07e97juukj30hs0hsgls.jpg"
+    },
 
     onLoad(option) {
         this.fetchFeeds()
