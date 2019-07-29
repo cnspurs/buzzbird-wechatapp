@@ -9,7 +9,7 @@
 	<view class="card" data-detail="{{item}}" bindtap="handleGoDetail">
 		<view class="profile">
 			<view class="avatar">
-				<image src="{{item.user.avatar_url || defaultAvatar}}" />
+				<image lazy-load="true" src="{{item.user.avatar_url || defaultAvatar}}" />
 			</view>
 			<view class="info">
 				<view class="name">{{item.user.chinese_name || item.user.english_name}}</view>
