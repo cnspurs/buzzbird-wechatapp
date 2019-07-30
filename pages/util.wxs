@@ -64,6 +64,14 @@ var pad = function(str, len, fill, pre) {
     return str
 }
 
+// 转义富文本
+var transferRichText = function(text) {
+    var reg = getRegExp("\\n", "g")
+    text = text.replace(reg, "<br/>")
+    return text
+}
+
 module.exports = {
-    formatTime: formatTime
+    formatTime: formatTime,
+    transferRichText: transferRichText
 }

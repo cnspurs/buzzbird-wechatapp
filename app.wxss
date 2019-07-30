@@ -48,8 +48,9 @@ page {
 }
 
 .content{
+	display: block;
 	font-size: 18px;
 	line-height: 24px;
 	margin: 8px 0;
-	
+	word-break: break-word;
 }

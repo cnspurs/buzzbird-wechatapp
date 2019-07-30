@@ -19,7 +19,7 @@
 				</view>
 			</view>
 		</view>
-		<view class="content">{{item.title}}</view>
+		<rich-text class="content" nodes="{{util.transferRichText(item.title)}}"></rich-text>
 		<view class="image" wx:if="{{item.media.length}}">
 			<image
 			 lazy-load="true"

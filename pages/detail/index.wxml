@@ -13,7 +13,7 @@
 			</view>
 		</view>
 	</view>
-	<view class="content">{{title}}</view>
+	<rich-text class="content" nodes="{{util.transferRichText(title)}}"></rich-text>
 	<view class="image">
 		<image
 		 wx:if="{{media.length}}"
@@ -30,7 +30,7 @@
 		<button
 		 wx:if="{{isShare}}"
 		 class="home"
-		 plain="true "
+		 plain="true"
 		 bindtap="handleGoHome"
 		>
 			<image class="icon" mode="widthFix" src="../icon/home.png" />
@@ -40,6 +40,11 @@
 			<image class="icon" mode="widthFix" src="../icon/wechat.png" />
 			分享
 		</button>
+		<!--<button class="share" plain="true" 
+		 bindtap="handleGoWeibo">
+			<image class="icon" mode="widthFix" src="../icon/wechat.png" />
+			微博
+		</button>-->
 	</view>
 </view>
 

@@ -10,5 +10,8 @@
     "navigationBarTitleText": "热刺嗡嗡鸟",
     "navigationBarTextStyle": "black"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "navigateToMiniProgramAppIdList": [
+    "wx9074de28009e1111"
+  ]
 }

@@ -46,5 +46,13 @@ Page({
             current,
             urls
         })
+    },
+
+    handleGoWeibo() {
+        let params = {
+            appId: 'wx9074de28009e1111',
+            path: 'pages/detail/detail/2694295913'
+        }
+        wx.navigateToMiniProgram(params)
     }
 })

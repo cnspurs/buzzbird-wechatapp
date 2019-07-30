@@ -1,5 +1,5 @@
 .card{
-	border-bottom: solid rgb(230, 230, 230) 8px
+	border-bottom: solid rgb(230, 230, 230) 6px
 }
 
 .image {
