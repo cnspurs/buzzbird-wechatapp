@@ -66,8 +66,11 @@ var pad = function(str, len, fill, pre) {
 
 // 转义富文本
 var transferRichText = function(text) {
-    var reg = getRegExp("\\n", "g")
-    text = text.replace(reg, "<br/>")
+    var reg1 = getRegExp("\\n", "g")
+    text = text.replace(reg1, "<br/>")
+    var reg2 = getRegExp("全文： http", "g")
+    text = text.replace(reg2, "<br/><br/>全文： http")
+
     return text
 }
 

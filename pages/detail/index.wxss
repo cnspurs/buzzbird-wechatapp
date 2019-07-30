@@ -13,7 +13,7 @@
 }
 
 .button_container button {
-	width: 36%;
+	min-width: 43%;
     display:flex;
     align-items:center;
     justify-content:center;

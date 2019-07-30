@@ -49,9 +49,10 @@ Page({
     },
 
     handleGoWeibo() {
+        let { status_id } = this.data
         let params = {
             appId: 'wx9074de28009e1111',
-            path: 'pages/detail/detail/2694295913'
+            path: 'pages/index/index?blog_id=' + status_id
         }
         wx.navigateToMiniProgram(params)
     }
